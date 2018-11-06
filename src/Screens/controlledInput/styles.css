@@ -1,0 +1,22 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #e9ecee;
+    width: 400px;
+    padding: 40px;
+    border-radius: 4px;
+}
+/* 
+.input {
+   margin: 20px;
+} */
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
