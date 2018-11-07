@@ -125,7 +125,7 @@ class PaymentStage extends Component {
    <section className='section'>
       <div className="form-group">
         <TextInputField
-         width={300}
+        width={300}
         label='cardHolder'
         name='cardHolder'
         value={this.state.cardHolder}
@@ -148,7 +148,7 @@ renderSepaForm = () => (
 <section className='section'>
   <div className="form-group">
     <TextInputField
-     width={300}
+    width={300}
     label='sepaName'
     name='sepaName'
     value={this.state.sepaName}
@@ -201,6 +201,7 @@ renderSepaForm = () => (
             images={images}
             displayBorder
             lightBorder
+            fullBorder
           />
           {renderForm()}
         </div>
