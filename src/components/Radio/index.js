@@ -4,21 +4,21 @@ import classnames from 'classnames'
 
 import '../Radio/styles.css'
 
-const renderText = (props) => {
-  const {
-    subtitle,
-    title
-  } = props
+// const renderText = (props) => {
+//   const {
+//     subtitle,
+//     title
+//   } = props
 
-  return subtitle
-    ? (
-      <div className={classnames('textContainer', subtitle && 'containerWithSubtitle')}>
-        <div className='title'>{title}</div>
-        <div className='subtitle'>{subtitle}</div>
-      </div>
-    )
-    : <div className='textContainer'>{title}</div>
-}
+//   return subtitle
+//     ? (
+//       <div className={classnames('textContainer', subtitle && 'containerWithSubtitle')}>
+//         <div className='title'>{title}</div>
+//         <div className='subtitle'>{subtitle}</div>
+//       </div>
+//     )
+//     : <div className='textContainer'>{title}</div>
+// }
 
 const renderLogos = (images) => {
   return (
@@ -55,7 +55,7 @@ const Radio = (props) => (
           <div className='circle'></div>
         </label>
       </div>
-      {renderText(props)}
+      {/* {renderText(props)} */}
     </div>
     {props.images && renderLogos(props.images)}
   </div>
@@ -79,9 +79,9 @@ Radio.propTypes = {
   fullBorder: PropTypes.bool
 }
 
-renderText.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string
-}
+// renderText.propTypes = {
+//   title: PropTypes.string,
+//   subtitle: PropTypes.string
+// }
 
 export default Radio

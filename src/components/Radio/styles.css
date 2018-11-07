@@ -8,7 +8,7 @@
 }
 
 .lightBorder {
-  border-color: lightgrey !important;
+  border-color: darkblue !important;
 }
 
 .border {
@@ -27,7 +27,7 @@
 .active {
   border-bottom: none;
   margin-bottom: 0px;
-  border-color: darkgrey;
+  border-color: blue;
 }
 
 .fullWidth {
@@ -89,7 +89,7 @@ input[type="radio"] {
   z-index: 7;
 }
 input[type="radio"]:checked + .label .circle::before {
-  background: var(--theme-color);
+  background: darkgrey;
 }
 
 .textContainer {
