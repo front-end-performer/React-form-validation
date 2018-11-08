@@ -104,7 +104,7 @@ class PaymentStage extends Component {
       <div>
       <h1>Registration Form</h1>
       <p style={{marginBottom: 40}}>Please fill in all textboxes</p>
-      <div>
+      <div style={{width: 400, margin: '0 auto'}}>
           {this.renderCreditCardForm()}
           <Button onClick={this.handleSubmit} intent="success" disabled={!this.state.canSubmit}>Sign up</Button>
       </div>
