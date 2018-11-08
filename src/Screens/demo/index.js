@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Button } from 'evergreen-ui'
 import Radio from '../../components/Radio/index'
 // import classnames from 'classnames'
-import FormInput from '../../components/SignInFormInput/index'
+import FormInput from '../../components/FormInput/index'
 
 //Payment options logos
 import VisaLogo from '../../assets/visa-logo.jpg'

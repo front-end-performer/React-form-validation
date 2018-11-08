@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
-import '../SignInFormInput/styles.css'
+import '../FormInput/styles.css'
 
 class FormInput extends Component {
   constructor(props) {
