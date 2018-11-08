@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import './App.css'
-// import PayStage from './Screens/SelectPayment/index'
-import PaymentStage from './Screens/SelectPayment/index'
+// import PaymentStage from './Screens/SelectPayment/index'
+// import SelectPayment from './Screens/SelectPayment/index'
+import PaymentDemo from './Screens/demo/index'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-          {/* <PayStage /> */}
-          <PaymentStage />
+          {/* <PaymentStage /> */}
+          {/* <SelectPayment /> */}
+          <PaymentDemo />
       </div>
     );
   }

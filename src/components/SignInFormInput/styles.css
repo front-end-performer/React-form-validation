@@ -1,0 +1,151 @@
+.container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  /* border-bottom: 1px solid #95b2e1; */
+  transition: all .5s;
+  margin-bottom: 10px;
+}
+
+.autoWidth {
+  width: 100%
+}
+
+.cashInput {
+  width: 150px;
+}
+
+
+.focused {
+  border-bottom: 1px solid #4285f4;
+}
+
+.icon {
+  position: absolute;
+  font-size: 30px;
+  color: rgba(100, 105, 144, 0.12)
+}
+
+.inputArea {
+  margin-left: 40px;
+  text-align: center;
+  border: 0px;
+  color: #4285f4;
+  outline: none;
+  font-family: Circular Std Medium;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.inputArea::placeholder {
+  color: rgba(66, 133, 244, 0.5);
+}
+
+.inputArea:-ms-input-placeholder {
+  color: #4285f4;
+}
+
+.inputArea::-ms-input-placeholder {
+    color: #4285f4;
+}
+
+input[type='number']::-webkit-inner-spin-button, input[type='number']::-webkit-outer-spin-button {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+}
+
+.noMarginLeft {
+  margin-left: 0px;
+}
+
+.border {
+  border: 1px solid grey;
+}
+
+.borderFocused {
+  border: 1px solid #4285f4;
+}
+
+.title {
+  color: #4285f4;
+  margin-bottom: -2px;
+}
+
+.fontThirdPayment {
+  font-size: 1.25em;
+  text-align: left;
+}
+
+.fontRestore {
+  font-size: 1.4em;
+}
+
+.rightIcon {
+  color: #4285f4;
+  width: 50px;
+  margin-right: 10px;
+  cursor: default;
+}
+
+.pulse {
+  animation: pulsate 2s linear infinite;
+}
+
+@keyframes pulsate {
+  0% {opacity: 1;}
+  50% {opacity: 0.5;}
+  100% {opacity: 1;}
+}
+
+@-webkit-keyframes pulsate {
+  0% {opacity: 1;}
+  50% {opacity: 0.5;}
+  100% {opacity: 1;}
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    width: 350px;
+  }
+
+  .autoWidth {
+    width: 100%;
+  }
+
+  .cashInput {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 568px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .cashInput {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* .inputArea {
+    font-size: 36px;
+  } */
+
+
+  .fontThirdPayment {
+    font-size: 1.25em;
+  }
+
+  .cashInput {
+    width: 150px;
+  }
+  
+  .icon {
+    font-size: 36px;
+  }
+}

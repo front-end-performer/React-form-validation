@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import '../SelectPayment/styles.css'
-import { TextInputField, Button } from 'evergreen-ui'
+import PropTypes from 'prop-types'
+import { Button } from 'evergreen-ui'
 import Radio from '../../components/Radio/index'
-import classnames from 'classnames'
+// import classnames from 'classnames'
+import FormInput from '../../components/SignInFormInput/index'
 
 //Payment options logos
 import VisaLogo from '../../assets/visa-logo.jpg'
@@ -10,7 +12,7 @@ import MasterCardLogo from '../../assets/master-card-logo.png'
 import MaestroLogo from '../../assets/maestro-logo.png'
 import SepaLogo from  '../../assets/sepa-logo.png'
 
-class SelectPayment extends Component {
+class PaymentDemo extends Component {
   constructor() {
     super()
     this.state = {
@@ -19,7 +21,6 @@ class SelectPayment extends Component {
       cardCvc: '',
       sepaIban: '',
       sepaName: '',
-      oneTimeSaving: '',
       formErrors: {cardHolder: '', cardNumber: '', sepaIban: '', sepaName: ''},
       formValidity: {cardHolder: false, cardNumber: false, sepaIban: false, sepaName: false},
       paymentOptions: [
@@ -54,7 +55,7 @@ class SelectPayment extends Component {
       return option
     })
 
-    const selectedPayment = index;
+    const { selectedPayment } = index
 
     paymentOptions[index].selected = true
     this.setState({
@@ -122,32 +123,31 @@ class SelectPayment extends Component {
   }
 
   canSubmit = () => {
-    const { selectedPayment } = this.state
-    if(selectedPayment <= 0){
-      this.setState({submitButton: this.state.formValidity.cardHolder && this.state.formValidity.cardNumber && this.state.oneTimeSaving})
+    const { selectedPayment } = this.state 
+    if( selectedPayment <= 0) {
+      this.setState({submitButton: this.state.formValidity.cardHolder && this.state.formValidity.cardNumber})
     } else {
-      this.setState({submitButton: this.state.formValidity.sepaName && this.state.formValidity.sepaIban && this.state.oneTimeSaving})
+      this.setState({submitButton: this.state.formValidity.sepaName && this.state.formValidity.sepaIban})
     }
   }
 
  renderCreditCardForm = () => (
    <section className='section'>
       <div className="form-group">
-        <TextInputField
-        width={300}
+        <FormInput
         label='cardHolder'
         name='cardHolder'
         value={this.state.cardHolder}
-        onChange={this.handleChange} />
+        onTextChange={this.handleChange} />
         <div className="invalidFeedback">{this.state.formErrors.cardHolder}</div>
       </div>
       <div className="form-group">
-        <TextInputField
-         width={300}
+        <FormInput
         label='cardNumber'
         name='cardNumber'
         value={this.state.cardNumber}
-        onChange={this.handleChange} />
+        onTextChange={this.handleChange}
+        />
         <div className="invalidFeedback">{this.state.formErrors.cardNumber}</div>
       </div>
       </section>
@@ -156,22 +156,20 @@ class SelectPayment extends Component {
 renderSepaForm = () => (
 <section className='section'>
   <div className="form-group">
-    <TextInputField
-    width={300}
+    <FormInput
     label='sepaName'
     name='sepaName'
     value={this.state.sepaName}
-    onChange={this.handleChange} />
+    onTextChange={this.handleChange} />
     <div className="invalidFeedback">{this.state.formErrors.sepaName}</div>
   </div>
 
   <div className="form-group">
-    <TextInputField
-    width={300}
+    <FormInput
     label='sepaIban'
     name='sepaIban'
     value={this.state.sepaIban}
-    onChange={this.handleChange} />
+    onTextChange={this.handleChange} />
     <div className="invalidFeedback">{this.state.formErrors.sepaIban}</div>
   </div>
 </section>
@@ -185,8 +183,8 @@ renderSepaForm = () => (
     alert(`Your registration detail: \n
            CardHolder: ${cardHolder} \n
            CardNumber: ${cardNumber} \n
-           SepaName: ${sepaName} \n
-           SepaIban: ${sepaIban} \n`)
+           SepaName: ${sepaName !== '' ? sepaName : 'empty'} \n
+           SepaIban: ${sepaIban !== '' ? sepaName : 'empty'} \n`)
   }
 
   renderContent = (paymentOption) => {
@@ -231,23 +229,11 @@ renderSepaForm = () => (
 
 
   render() {
-    const { oneTimeSaving } = this.state
+    // const { cardHolder, cardNumber } = this.state
     return (
       <div className='form'>
       <h1>Form</h1>
       <div>
-      <div className='depositRow'>
-              <div className={classnames('formInputContainer')}>
-                <input
-                  name='oneTimeSaving'
-                  value={oneTimeSaving}
-                  type={'text'}
-                  placeholder={'2500€'}
-                  onChange={this.handleChange}
-                />      
-                <div className="invalidFeedback">{this.state.formErrors.oneTimeSaving}</div>
-              </div>
-              </div>
           <form>
             {this.state.paymentOptions.map(paymentOption => this.renderContent(paymentOption))}
           </form>
@@ -258,6 +244,9 @@ renderSepaForm = () => (
   }
 }
 
-export default SelectPayment;
+PaymentDemo.propTypes = {
+  onTextChange: PropTypes.func,
+  name: PropTypes.string
+}
 
-
+export default PaymentDemo;

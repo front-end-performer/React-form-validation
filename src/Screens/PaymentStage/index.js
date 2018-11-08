@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../PaymentStage/styles.css';
 import { TextInputField, Button } from 'evergreen-ui'
 
-class PayStage extends Component {
+class PaymentStage extends Component {
   constructor() {
     super()
     this.state = {
@@ -113,4 +113,4 @@ class PayStage extends Component {
   }
 }
 
-export default PayStage;
+export default PaymentStage;
